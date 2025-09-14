@@ -153,14 +153,14 @@ public class Player : MonoBehaviour
                 if (enemy != null && enemy.CompareTag("Enemy"))
                 {
                     Debug.Log("Enemy -> " + enemy.name);
-                    enemy.GetComponent<Enemy>().TakeDamage(dmg);
+                    enemy.GetComponent<Enemy>().TakeDamage(dmg, Enemy.AttackSource.Sword);
                 }
                 else if (enemy != null && enemy.CompareTag("bulletEnemy"))
                 {
                     if(enemy.GetComponent<EnemyBullet>().speed < 1) continue;
                     Debug.Log("Bullet -> " + enemy.name);
-                    enemy.GetComponent<EnemyBullet>().Die();
-                    enemy.transform.Find("Die").gameObject.GetComponent<ParticleSystem>().Play();
+                    // 反射而不是销毁
+                    enemy.GetComponent<EnemyBullet>().ReflectToMouse();
                 }
             }
         }

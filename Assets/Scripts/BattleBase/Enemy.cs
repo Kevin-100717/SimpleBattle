@@ -29,6 +29,14 @@ public class Enemy : MonoBehaviour
     public int damage = 2;
     public bool control = true;
     public bool hpLock = false;
+    public float knockbackDistance = 2.5f; // 敌人被击退的距离
+
+    private bool isKnockback = false;
+    private Vector3 knockbackTarget;
+    private float knockbackSpeed = 18f;
+    private float knockbackTimer = 0f;
+    private float knockbackDuration = 0.07f; // 击退持续时间
+    private Vector3 knockbackDir;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,11 +47,27 @@ public class Enemy : MonoBehaviour
         agent.speed = speed;
         atkTimer = atkInterval;
     }
-    public void TakeDamage(int damage)
+    public enum AttackSource
+{
+    Sword,
+    Bullet,
+    Other
+}
+
+    public void TakeDamage(int damage, AttackSource source = AttackSource.Other)
     {
         if(isDie || hpLock)
         {
             return;
+        }
+        // 只有非boss(control==true)且被sword攻击才会被击退
+        if (control && !isKnockback && source == AttackSource.Sword)
+        {
+            Transform player = GameObject.FindGameObjectWithTag("Player").transform;
+            knockbackDir = (transform.position - player.position).normalized;
+            isKnockback = true;
+            knockbackTimer = 0f;
+            if (agent != null) agent.isStopped = true;
         }
         if (hp-damage <= 0)
         {
@@ -82,11 +106,24 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!control)
+        if (isDie)
         {
             return;
         }
-        if (isDie)
+        // 处理击退逻辑，击退指定时间
+        if (isKnockback)
+        {
+            transform.position += knockbackDir * knockbackSpeed * Time.deltaTime;
+            knockbackTimer += Time.deltaTime;
+            if (knockbackTimer >= knockbackDuration)
+            {
+                isKnockback = false;
+                if (agent != null) agent.isStopped = false;
+            }
+            // 击退时不执行导航和攻击
+            return;
+        }
+        if (!control)
         {
             return;
         }

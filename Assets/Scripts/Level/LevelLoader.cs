@@ -83,6 +83,10 @@ public class LevelLoader : MonoBehaviour
                     case "boss":
                         {
                             node = Instantiate(bossPrefab, frame);
+                            node.GetComponent<NodeUI>().title = nodeData["title"].ToString();
+                            node.GetComponent<NodeUI>().difficult = (int)nodeData["difficult"];
+                            node.GetComponent<NodeUI>().content = nodeData["desc"].ToString();
+                            node.GetComponent<NodeUI>().sceneId = nodeData["sceneId"].ToString();
                             break;
                         }
                     case "blank":

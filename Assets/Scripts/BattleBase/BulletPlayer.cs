@@ -29,7 +29,7 @@ public class BulletPlayer : MonoBehaviour
             {
                 return;
             }
-            enemy.GetComponent<Enemy>().TakeDamage(damage);
+            enemy.GetComponent<Enemy>().TakeDamage(damage, Enemy.AttackSource.Bullet);
             Die();
         }
         if (collision.CompareTag("Wall"))

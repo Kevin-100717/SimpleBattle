@@ -5510,7 +5510,7 @@ MonoBehaviour:
   atkWarn: {fileID: 8306289764268673877}
   atkInterval: 1.5
   atkRange: 6.5
-  bulletPrefab: {fileID: 746039179349212116, guid: 24bd56757fbbd3242877320076b6e17d, type: 3}
+  bulletPrefab: {fileID: 746039179349212116, guid: f61a0f693b72bf44287c7217f965d76a, type: 3}
   isDie: 0
   dropItem:
   - itemType: 0
@@ -5518,6 +5518,10 @@ MonoBehaviour:
   - itemType: 2
     num: 2
   itemBallPrefab: {fileID: 4609029264634921234, guid: cd8e49aa10ff3e648810ecde9817b604, type: 3}
+  damage: 2
+  control: 1
+  hpLock: 0
+  knockbackDistance: 2.5
 --- !u!114 &1374665934635078791
 MonoBehaviour:
   m_ObjectHideFlags: 0
