@@ -51,6 +51,7 @@ public class LevelDetail : MonoBehaviour
     public void OnLevelClick()
     {
         HideDetail();
+        Debug.Log(sceneName);
         LevelLoader.Instance.LoadLevel(sceneName);
     }
 }

@@ -1407,7 +1407,7 @@ Transform:
   m_GameObject: {fileID: 287396278}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.4, y: -2.83, z: 0}
+  m_LocalPosition: {x: 6.8, y: -4.42, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -1755,13 +1755,14 @@ GameObject:
   - component: {fileID: 360063990}
   - component: {fileID: 360063989}
   - component: {fileID: 360063991}
+  - component: {fileID: 360063992}
   m_Layer: 0
   m_Name: TowerDebuff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &360063989
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1842,6 +1843,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d3ab3029bafb1a4996a991ed10ab87e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &360063992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360063988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b1960128516b1449b1a9f57a29afa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 746039179349212116, guid: a726a6ce03b49af4782506b4ccbc8c9d, type: 3}
+  shootCD: 4
+  bulletCount: 5
+  spreadAngle: 20
+  interval: 0.1
 --- !u!1 &364420155
 GameObject:
   m_ObjectHideFlags: 0
@@ -3273,6 +3291,7 @@ GameObject:
   - component: {fileID: 717339317}
   - component: {fileID: 717339319}
   - component: {fileID: 717339320}
+  - component: {fileID: 717339321}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3449,6 +3468,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &717339321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 717339314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9cda0e54c3c4eb44b00c96508e9b05a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debuffs: []
+  player: {fileID: 0}
 --- !u!1 &746136869
 GameObject:
   m_ObjectHideFlags: 0
@@ -4069,6 +4102,8 @@ MonoBehaviour:
       buffType: 0
       factor: 0
       once: 0
+      time: 0
+      counter: 0
   BuffIconPrefab: {fileID: 2723125224376145013, guid: 4e2cc1b35a1df1c4dbca9d4a5293accd, type: 3}
   buffFrame: {fileID: 345923062}
   buffPadding: {fileID: 44260144}
@@ -7114,6 +7149,8 @@ MonoBehaviour:
       buffType: 2
       factor: 1
       once: 0
+      time: 0
+      counter: 0
   - name: "\u5C04\u51FB\u63D0\u5347"
     icon: {fileID: 21300000, guid: b0dbc29d6c7927349b1da53b309b654a, type: 3}
     description: "<color=yellow>\u5C04\u51FB[MOUSE 1]</color>\u653B\u51FB\u529B +
@@ -7122,6 +7159,8 @@ MonoBehaviour:
       buffType: 3
       factor: 1
       once: 0
+      time: 0
+      counter: 0
   - name: "\u51C6\u661F\u6539\u9020"
     icon: {fileID: 21300000, guid: 9b0879ec0f306c84dab0554dd03c261b, type: 3}
     description: "<color=green>\u7D22\u654C\u8303\u56F4[CURSOR]</color> + <color=red>0.5</color>\n\n\n\n\u540C\u7C7B\u6548\u679C\u52A0\u7B97"
@@ -7129,6 +7168,8 @@ MonoBehaviour:
       buffType: 6
       factor: 0.1
       once: 0
+      time: 0
+      counter: 0
   - name: "\u9632\u5FA1\u63D0\u5347"
     icon: {fileID: 21300000, guid: 523c5dc67da9fc942b1b3ad60a241e6e, type: 3}
     description: "<color=skyblue>\u9632\u5FA1</color> + <color=red>0.5</color>\n\n\n\n\u540C\u7C7B\u6548\u679C\u52A0\u7B97"
@@ -7136,6 +7177,8 @@ MonoBehaviour:
       buffType: 7
       factor: 0.5
       once: 0
+      time: 0
+      counter: 0
   - name: "\u8840\u91CF\u6062\u590D"
     icon: {fileID: 21300000, guid: 9147f62b412a6694e9964c29bcb9d88d, type: 3}
     description: "<color=green>\u8840\u91CF</color>\u7ACB\u523B + <color=red>20</color>\n\n\n\n\n\u4E00\u6B21\u6027\u6D88\u8017"
@@ -7143,6 +7186,8 @@ MonoBehaviour:
       buffType: 4
       factor: 20
       once: 1
+      time: 0
+      counter: 0
   - name: "\u5C04\u901F\u63D0\u5347"
     icon: {fileID: 21300000, guid: b65e874bd4ccdab4faee24d7c1e3f642, type: 3}
     description: "<color=yellow>\u5C04\u51FB\u95F4\u9694</color> - <color=green>0.05</color>\n\n\n\n\u540C\u7C7B\u6548\u679C\u52A0\u7B97"
@@ -7150,6 +7195,8 @@ MonoBehaviour:
       buffType: 8
       factor: -0.05
       once: 0
+      time: 0
+      counter: 0
   - name: "\u5F39\u5939\u63D0\u5347"
     icon: {fileID: 21300000, guid: b65e874bd4ccdab4faee24d7c1e3f642, type: 3}
     description: "<color=yellow>\u5C04\u51FB\u5B50\u5F39\u4E0A\u9650</color> + <color=red>3</color>\n\n\n\n\u540C\u7C7B\u6548\u679C\u52A0\u7B97"
@@ -7157,6 +7204,8 @@ MonoBehaviour:
       buffType: 5
       factor: 3
       once: 0
+      time: 0
+      counter: 0
   - name: "\u5F39\u9053\u63D0\u5347"
     icon: {fileID: 21300000, guid: b65e874bd4ccdab4faee24d7c1e3f642, type: 3}
     description: "<color=yellow>\u5F39\u9053</color> + <color=red>1</color>\n\n\n\n\u540C\u7C7B\u6548\u679C\u52A0\u7B97"
@@ -7164,6 +7213,8 @@ MonoBehaviour:
       buffType: 9
       factor: 1
       once: 0
+      time: 0
+      counter: 0
 --- !u!4 &1771942799
 Transform:
   m_ObjectHideFlags: 0

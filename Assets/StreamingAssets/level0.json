@@ -1,91 +1,37 @@
 ﻿{
-  "name": "失落岩洞",
-  "map": [
-    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
-    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
-    [ 0, 0, 6, 7, 8, 9, 0, 0, 0, 0 ],
-    [ 2, 0, 5, 0, 10, 0, 0, 0, 0, 0 ],
-    [ 1, 3, 4, 0, 0, 0, 0, 0, 0, 0 ]
-  ],
+  "name": "废墟工厂",
   "mapData": [
     {
-      "type": "blank"
-    },
-    {
-      "type": "message",
-      "title": "开始",
-      "content": "目标：清理这片区域的敌人\n按下wasd移动，空格砍击，鼠标右键射击",
-      "connect": [ 1, 1, 0, 0 ] //up right down left
-    },
-    {
-      "type": "message",
-      "title": "教学",
-      "content": "请注意自己的弹药数量，击败敌人会掉落少量弹药，也会增加一些经验值，经验值用于升级，可以大幅提高战斗能力",
-      "connect": [ 0, 0, 0, 0 ]
-    },
-    {
-      "type": "battle",
-      "title": "MS-1 岩洞入口",
+      "tag": "Battle",
+      "type": "Battle",
+      "title": "MS-NO 失控器械",
       "sceneId": "Scenes/Battle001",
       "difficult": 0,
-      "desc": "剿灭行动第一阶段，我们需要攻入敌人盘踞的岩洞\n\n<color=red><方块></color> 敌人作战单位，血量中等\n\n<color=red><弩炮台></color>定期<color=grey>(4s)</color>射出箭矢，造成<color=orange>较大</color>伤害",
-      "connect": [ 0, 1, 0, 0 ]
+      "desc": "失去控制的机械在工厂中无规则攻击一切生命"
     },
     {
-      "type": "battle",
-      "title": "MS-1 岩洞入口",
-      "sceneId": "Scenes/Battle001",
+      "tag": "Battle",
+      "type": "Battle",
+      "title": "MS-NO 有效防卫",
+      "sceneId": "Scenes/Battle002",
       "difficult": 0,
-      "desc": "剿灭行动第一阶段，我们需要攻入敌人盘踞的岩洞\n\n<color=red><方块></color> 敌人作战单位，血量中等\n\n<color=red><弩炮台></color>定期<color=grey>(4s)</color>射出箭矢，造成<color=orange>较大</color>伤害",
-      "connect": [ 1, 0, 0, 0 ]
+      "desc": "工厂也有自己的自动防卫系统，只不过现在失控了"
     },
     {
-      "type": "battle",
-      "title": "MS-1 岩洞入口",
-      "sceneId": "Scenes/Battle001",
+      "tag": "Choose",
+      "type": "Choose",
+      "title": "MS-CH 抉择",
       "difficult": 0,
-      "desc": "剿灭行动第一阶段，我们需要攻入敌人盘踞的岩洞\n\n<color=red><方块></color> 敌人作战单位，血量中等\n\n<color=red><弩炮台></color>定期<color=grey>(4s)</color>射出箭矢，造成<color=orange>较大</color>伤害",
-      "connect": [ 1, 0, 0, 0 ]
+      "sceneId": "",
+      "desc": "在废墟工厂中，会有许多残存的增益部件，你选择"
     },
     {
-      "type": "battle",
-      "title": "MS-1 岩洞入口",
+      "tag": "Boss",
+      "type": "Battle",
+      "title": "MS-Boss-1 守卫者",
       "sceneId": "Scenes/Battle001",
       "difficult": 0,
-      "desc": "剿灭行动第一阶段，我们需要攻入敌人盘踞的岩洞\n\n<color=red><方块></color> 敌人作战单位，血量中等\n\n<color=red><弩炮台></color>定期<color=grey>(4s)</color>射出箭矢，造成<color=orange>较大</color>伤害",
-      "connect": [ 0, 1, 0, 0 ]
-    },
-    {
-      "type": "battle",
-      "title": "MS-1 岩洞入口",
-      "sceneId": "Scenes/Battle001",
-      "difficult": 0,
-      "desc": "剿灭行动第一阶段，我们需要攻入敌人盘踞的岩洞\n\n<color=red><方块></color> 敌人作战单位，血量中等\n\n<color=red><弩炮台></color>定期<color=grey>(4s)</color>射出箭矢，造成<color=orange>较大</color>伤害",
-      "connect": [ 0, 1, 0, 0 ]
-    },
-    {
-      "type": "battle",
-      "title": "MS-1 岩洞入口",
-      "sceneId": "Scenes/Battle001",
-      "difficult": 0,
-      "desc": "剿灭行动第一阶段，我们需要攻入敌人盘踞的岩洞\n\n<color=red><方块></color> 敌人作战单位，血量中等\n\n<color=red><弩炮台></color>定期<color=grey>(4s)</color>射出箭矢，造成<color=orange>较大</color>伤害",
-      "connect": [ 0, 1, 1, 0 ]
-    },
-    {
-      "type": "battle",
-      "title": "MS-1 岩洞入口",
-      "sceneId": "Scenes/Battle001",
-      "difficult": 0,
-      "desc": "剿灭行动第一阶段，我们需要攻入敌人盘踞的岩洞\n\n<color=red><方块></color> 敌人作战单位，血量中等\n\n<color=red><弩炮台></color>定期<color=grey>(4s)</color>射出箭矢，造成<color=orange>较大</color>伤害",
-      "connect": [ 0, 0, 0, 0 ]
-    },
-    {
-      "type": "battle",
-      "title": "MS-1 岩洞入口",
-      "sceneId": "Scenes/Battle001",
-      "difficult": 0,
-      "desc": "剿灭行动第一阶段，我们需要攻入敌人盘踞的岩洞\n\n<color=red><方块></color> 敌人作战单位，血量中等\n\n<color=red><弩炮台></color>定期<color=grey>(4s)</color>射出箭矢，造成<color=orange>较大</color>伤害",
-      "connect": [ 0, 0, 0, 0 ]
+      "desc": "工厂中的废弃机器，它在看守，它在毁灭\n\n<color=red><弩炮台></color>定期<color=grey>(4s)</color>射出箭矢，造成<color=orange>较大</color>伤害"
     }
   ]
 }

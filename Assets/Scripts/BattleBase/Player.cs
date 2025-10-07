@@ -207,9 +207,13 @@ public class Player : MonoBehaviour
                 break;
         }
     }
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage,bool real = false)
     {
-        if(damage <= def)
+        if (real)
+        {
+            
+        }
+        else  if (damage <= def)
         {
             damage = 1;
         }

@@ -12,6 +12,8 @@ public class EnemyBullet : MonoBehaviour
     public float offset;
     private bool isReflected = false;
     public bool useCustomDirection = false;
+    public Buff addBuff;
+    public bool ab;
     void Start()
     {
         if (!useCustomDirection || direction == Vector3.zero)
@@ -46,7 +48,14 @@ public class EnemyBullet : MonoBehaviour
         }
         if (!isReflected && (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Wall")))
         {
-            if(collision.CompareTag("Player")) collision.gameObject.GetComponent<Player>().TakeDamage(damage);
+            if (collision.CompareTag("Player"))
+            {
+                collision.gameObject.GetComponent<Player>().TakeDamage(damage);
+                if(ab)
+                {
+                    collision.gameObject.GetComponent<DeBuffController>().AddDebuff(addBuff);
+                }
+            }
             Die();
         }
         else if (isReflected && collision.gameObject.CompareTag("Enemy"))

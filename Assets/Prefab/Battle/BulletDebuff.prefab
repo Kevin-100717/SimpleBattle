@@ -4844,7 +4844,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8f44bba9aa1fb054b84dbc03d5cad3db, type: 2}
+  - {fileID: 2100000, guid: 6f221120626f20e4480440811f5ab381, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4912,7 +4912,7 @@ GameObject:
   - component: {fileID: -8477863611514221789}
   - component: {fileID: 4173457583671236323}
   m_Layer: 0
-  m_Name: BulletDu
+  m_Name: BulletDebuff
   m_TagString: bulletEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4956,7 +4956,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f49db5b15fd4c4f448ac20256be60b24, type: 2}
+  - {fileID: 2100000, guid: 196abe3e5a800e241ab641a0fdfa90ba, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5009,7 +5009,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: af26b5a7ded194548b554f0c91594a4e, type: 2}
+  - {fileID: 2100000, guid: e4eca89df696b8c43adee286a0fd0449, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5181,7 +5181,7 @@ MonoBehaviour:
   offset: 0
   useCustomDirection: 0
   addBuff:
-    buffType: 10
+    buffType: 12
     factor: 0
     once: 0
     time: 2
@@ -9973,7 +9973,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1e9310e9e28f03542aba08fc54f3d928, type: 2}
+  - {fileID: 2100000, guid: 17f41855c7089d14692e8664c4622102, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14861,7 +14861,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0c18fa5646ca6a34fa13aa10cb692d81, type: 2}
+  - {fileID: 2100000, guid: d2719de20c735e24a84cb483059439ab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -29,10 +29,16 @@ public class Buff
         Def,
         ShootSpeed,
         BulletPreShoot,
+        Du,
+        DeShoot,
+        DeSpeed
     }
     public BuffType buffType;
     public float factor;
     public bool once = false;
+    //for debuff
+    public float time;
+    public float counter;
 }
 [System.Serializable]
 public class BuffTemplate
@@ -58,4 +64,26 @@ public class EnemyWaveData
     public List<EnemyData> enemies = new List<EnemyData>();
     public List<GameObject> traps = new List<GameObject>();
     public GameObject bar;
+}
+
+[System.Serializable]
+public class NodeData
+{
+    public enum NodeType
+    {
+        RandomBattle,
+        CustomBattle,
+        RamdonChoose,
+        CostomChoose
+    }
+    [System.Serializable]
+    public class rowNode
+    {
+        public NodeType type;
+        public int id;
+    }
+    public List<rowNode> nodes = new List<rowNode>();
+    public bool randomNum;
+    public int max_n;
+    public int min_n;
 }
