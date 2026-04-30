@@ -1,0 +1,57 @@
+{
+    "days":[
+      {
+        "time": 30,
+        "event": [
+          {
+            "type": "enemy_spawn",
+            "time": 10,
+            "dataIndex": 0
+          },
+          {
+            "type": "enemy_spawn",
+            "time": 20,
+            "dataIndex": 0
+          },
+          {
+            "type": "enemy_spawn",
+            "time": 28,
+            "dataIndex": 0
+          }
+        ]
+      },
+      {
+        "time": 60,
+        "event": [
+          {
+            "type": "enemy_spawn",
+            "time": 30,
+            "dataIndex": 0
+          }
+        ]
+      }
+    ],
+    "datas":[
+        [
+            {"enemy_key":"Enemy0001","route":-1,"sp_range":2,"interval":1,"time":0,"start":0,"repeat": 2},
+            {"enemy_key":"Enemy0001","route":-1,"sp_range":2,"interval":2,"time":5,"start":1,"repeat":3}
+        ]
+    ],
+    "sp_Route":[
+        {
+            "start":{"x":0,"y":0},
+            "checkpoints":[
+                {
+                    "type":"move",
+                    "pos":{"x":0,"y":0},
+                    "time":0
+                },
+                {
+                    "type":"wait",
+                    "pos":{"x":0,"y":0},
+                    "time":20
+                }
+            ]
+        }
+    ]
+}
