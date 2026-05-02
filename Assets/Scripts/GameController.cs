@@ -11,7 +11,9 @@ public class GameController : MonoBehaviour
     private DaysEntity day;
     private float dayTimer;
     private int eventIndex = -1;
+    public bool startFlag = false;
     private bool endFlag = false;
+    public List<BuildingsData> choosedBuildingsData;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,12 @@ public class GameController : MonoBehaviour
         dayTimer = 0;
         eventIndex = -1;
         UIManager.instance.SetEvent(day);
+    }
+    public void StartBattle(List<BuildingsData> bdts)
+    {
+        choosedBuildingsData = bdts;
+        UIManager.instance.ShowPlayBar();
+        startFlag = true;
     }
     void TriggerEvent(EventEntity e)
     {
@@ -34,7 +42,7 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (endFlag) return;
+        if (endFlag || (!startFlag)) return;
         dayTimer += Time.deltaTime;
         if(eventIndex == -1)
         {

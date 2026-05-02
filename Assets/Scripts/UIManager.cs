@@ -1,3 +1,4 @@
+using DG.Tweening;
 using Game.Data;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,10 +12,15 @@ public class UIManager : MonoBehaviour
     public Text dayNumText;
     public GameObject enemySpawnIconPrefab;
     public RectTransform dayEventFrame;
+    public CanvasGroup playBar;
     // Start is called before the first frame update
     void Awake()
     {
         instance = this;
+    }
+    public void ShowPlayBar()
+    {
+        playBar.DOFade(1, 0.3f);
     }
     public void SetDay(int day,float time,float total)
     {

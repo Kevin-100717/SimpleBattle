@@ -13,3 +13,23 @@ public class Damage
     }
     public Type type;
 }
+[System.Serializable]
+public class BuildingsData
+{
+    public Sprite icon;
+    public int cost;
+    public GameObject buildingPrefab;
+    public string name;
+    public Color quality;
+}
+[System.Serializable]
+public class BattleInfo
+{
+    public string num;
+    public string name;
+    [Multiline(5)]
+    public string desc;
+    public Color difficulty;
+    public string difficultyName;
+    public string spNote;
+}

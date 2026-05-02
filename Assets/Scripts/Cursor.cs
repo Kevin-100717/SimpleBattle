@@ -12,6 +12,7 @@ public class Cursor : MonoBehaviour
 
     void Update()
     {
+        if (!GameController.instance.startFlag) return;
         Vector3 mouseScreenPos = Input.mousePosition;
         mouseScreenPos.z = Mathf.Abs(mainCamera.transform.position.z); // 适用于正交/透视相机
         Vector3 mouseWorldPos = mainCamera.ScreenToWorldPoint(mouseScreenPos);

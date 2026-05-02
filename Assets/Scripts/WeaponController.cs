@@ -42,6 +42,7 @@ public class WeaponController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!GameController.instance.startFlag) return;
         shootCountdown -= Time.deltaTime;
         if (Input.GetMouseButton(0) && shootCountdown <= 0 && !isReloading)
         {

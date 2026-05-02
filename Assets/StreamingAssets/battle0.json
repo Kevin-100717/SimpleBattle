@@ -1,31 +1,31 @@
 {
     "days":[
       {
-        "time": 30,
+        "time": 180,
         "event": [
           {
             "type": "enemy_spawn",
-            "time": 10,
+            "time": 120,
             "dataIndex": 0
           },
           {
             "type": "enemy_spawn",
-            "time": 20,
+            "time": 140,
             "dataIndex": 0
           },
           {
             "type": "enemy_spawn",
-            "time": 28,
+            "time": 160,
             "dataIndex": 0
           }
         ]
       },
       {
-        "time": 60,
+        "time": 180,
         "event": [
           {
             "type": "enemy_spawn",
-            "time": 30,
+            "time": 150,
             "dataIndex": 0
           }
         ]

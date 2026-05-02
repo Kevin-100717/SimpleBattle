@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (!GameController.instance.startFlag) return;
         float moveX = Input.GetAxisRaw("Horizontal"); // A/D 或 左/右
         float moveY = Input.GetAxisRaw("Vertical");   // W/S 或 上/下
         movement = new Vector2(moveX, moveY).normalized;
@@ -24,6 +25,7 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!GameController.instance.startFlag) return;
         if (rb != null)
         {
             rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
