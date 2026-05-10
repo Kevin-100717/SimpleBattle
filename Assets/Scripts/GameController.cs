@@ -13,7 +13,10 @@ public class GameController : MonoBehaviour
     private int eventIndex = -1;
     public bool startFlag = false;
     private bool endFlag = false;
+    public int Resources = 100;
+    public bool canShoot = true;
     public List<BuildingsData> choosedBuildingsData;
+    public GameObject buildCursor;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,10 +27,24 @@ public class GameController : MonoBehaviour
         eventIndex = -1;
         UIManager.instance.SetEvent(day);
     }
+    public bool RequireBuild(BuildingsData data)
+    {
+        if(Resources >= data.cost)
+        {
+            Resources -= data.cost;
+            UIManager.instance.ShowResources(Resources);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
     public void StartBattle(List<BuildingsData> bdts)
     {
         choosedBuildingsData = bdts;
         UIManager.instance.ShowPlayBar();
+        UIManager.instance.ShowBuildingUI(choosedBuildingsData);
         startFlag = true;
     }
     void TriggerEvent(EventEntity e)

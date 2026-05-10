@@ -21,6 +21,13 @@ public class BuildingsData
     public GameObject buildingPrefab;
     public string name;
     public Color quality;
+    public enum BuildCondition
+    {
+        NearMainOrHavePower,
+        NearPower,
+        Anywhere
+    }
+    public BuildCondition buildCondition;
 }
 [System.Serializable]
 public class BattleInfo

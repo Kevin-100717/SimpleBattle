@@ -15,6 +15,7 @@ public class WeaponController : MonoBehaviour
         public int bulletCount = 30;
         public float reloadPreTime = 0.8f;
         public Damage bulletDamage;
+        public float randAngle = 5f;
     }
     public List<Weapon> weapons;
     private int currentWeaponIndex = 0;
@@ -43,6 +44,7 @@ public class WeaponController : MonoBehaviour
     void Update()
     {
         if (!GameController.instance.startFlag) return;
+        if(!GameController.instance.canShoot) return;
         shootCountdown -= Time.deltaTime;
         if (Input.GetMouseButton(0) && shootCountdown <= 0 && !isReloading)
         {
